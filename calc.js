@@ -11,7 +11,6 @@ class Calculator {
 
 		this.num1 = Number(num1);
 		this.num2 = Number(num2);
-		console.log(typeof this.num1, typeof this.num2);
 	}
 
 	add() {
