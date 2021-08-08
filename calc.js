@@ -1,7 +1,17 @@
 class Calculator {
 	constructor(num1, num2) {
+		if (
+			Number.isNaN(Number(num1)) ||
+			Number.isNaN(Number(num2)) ||
+			num1 === '' ||
+			num2 === ''
+		) {
+			throw new Error('Invalid data! Only numbers are accepted!');
+		}
+
 		this.num1 = Number(num1);
 		this.num2 = Number(num2);
+		console.log(typeof this.num1, typeof this.num2);
 	}
 
 	add() {
@@ -17,6 +27,9 @@ class Calculator {
 	}
 
 	divide() {
+		if (this.num2 === 0) {
+			throw new Error('Division by "0" is prohibited!');
+		}
 		return this.num1 / this.num2;
 	}
 }
